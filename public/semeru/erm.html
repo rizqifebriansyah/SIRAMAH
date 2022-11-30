@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Dashboard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">  
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <style>
+    .scroll {
+      max-height: 300px;
+      overflow-y: auto;
+  }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <img width="50px" src="dist/img/logo_rs.png" class="mr-3" alt="">
+    <a class="navbar-brand" href="#">Semerusmart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="bi bi-box-arrow-left mr-2"></i> </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- ./wrapper -->
+
+<div class="card">
+  <div class="card-header p-2">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Form Resume medis</a></li>
+      <!-- <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Order Penunjang</a></li>
+      <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Order Farmasi</a></li> -->
+      <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Riwayat Catatan Medis</a></li>
+    </ul>
+  </div><!-- /.card-header -->
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="active tab-pane" id="activity">
+        <div class="row">
+          <div class="col-md-12">
+            <h5>Data Pasien Poli Anak</h5>
+            <table id="example2" class="table table-sm table-bordered table-hover">
+             <thead class="bg-success">
+               <th>Nomor RM</th>
+               <th>Nama Pasien</th>
+               <th>Umur</th>
+               <th>Penjamin</th>
+             </thead>
+             <tbody>
+                <tr>
+                  <td>1235</td>
+                  <td>Lionel Messi</td>
+                  <td>34</td>
+                  <td>BPJS</td>
+                </tr>
+                <tr>
+                  <td>1235</td>
+                  <td>Lionel Messi</td>
+                  <td>34</td>
+                  <td>BPJS</td>
+                </tr>
+                <tr>
+                  <td>1235</td>
+                  <td>Lionel Messi</td>
+                  <td>34</td>
+                  <td>BPJS</td>
+                </tr>
+             </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Post -->
+        <div class="row mt-4">          
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>E-Form </h4>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group d-flex float-right">
+                  <select class="form-control select2 bg-warning" style="width: 100%;">
+                    <option selected="selected">-- Pilih Jenis Form --</option>
+                    <option>Order Penunjang</option>
+                    <option>Order Farmasi</option>
+                  </select>
+                </div>
+              </div>
+            </div>            
+            <div class="card card-primary card-outline">
+              <div class="card-body">
+                <div id="lokasiformnya">
+                  <h5> Form order Penunjang</h5>
+                  <div class="row invoice-info text-sm text-bold">
+                    <div class="col-sm-4 invoice-col">
+                     <table class="table table-sm">
+                      <tr>
+                        <td>Nomor RM</td>
+                        <td>1233455</td>
+                      </tr>
+                      <tr>
+                        <td>Nama Pasien</td>
+                        <td>Lionel Messi</td>
+                      </tr>
+                      <tr>
+                        <td>Alamat</td>
+                        <td>Waled, Kabupaten Cirebon</td>
+                      </tr>
+                     </table>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-4 invoice-col">
+                      <!-- To
+                      <address>
+                        <strong>John Doe</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                        Phone: (555) 539-1037<br>
+                        Email: john.doe@example.com
+                      </address> -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-4 invoice-col text-bold">
+                      <table class="table table-sm">
+                        <tr>
+                          <td>Tanggal Kunjungan</td>
+                          <td>12 Desember 2022</td>
+                        </tr>
+                        <tr>
+                          <td>Penjamin</td>
+                          <td>BPJS</td>
+                        </tr>
+                       </table>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card card-success card-outline">
+                        <div class="card-body">
+                          <div class="form-group d-flex float-right">
+                            <select class="form-control select2 bg-success" style="width: 100%;">
+                              <option selected="selected">-- Pilih Layanan Penunjang --</option>
+                              <option>Laboratorium</option>
+                              <option>Laboratorium Patologi</option>
+                              <option>Radiologi</option>
+                              <option>Bank Darah</option>
+                            </select>
+                          </div>  
+                          <div class="row">
+                            <div class="col-md-12">
+                              <form action="erm.php" method="post">
+                              <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th width="500px">Nama Layanan</th>
+                                        <th width="180px"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="itemlist">
+                                    <tr>
+                                        <td><input name="jenis_input[0]" class="form-control" /></td>
+                                        <td><input name="jumlah_input[0]" class="form-control" /></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class="btn btn-small btn-default" onclick="additem(); return false"><i class="bi bi-plus-lg"></i></button>
+                                            <button name="submit" class="btn btn-small btn-primary"><i class="bi bi-bookmark-check"></i></button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </form>
+                            </div>
+                          </div>                                                  
+                        </div>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.post -->
+      </div>
+      <!-- /.tab-pane -->
+      <div class="tab-pane" id="timeline">
+        <!-- The timeline -->
+        <div class="timeline timeline-inverse">
+          <!-- timeline time label -->
+          <div class="time-label">
+            <span class="bg-danger">
+              10 Feb. 2014
+            </span>
+          </div>
+          <!-- /.timeline-label -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-envelope bg-primary"></i>
+
+            <div class="timeline-item">
+              <span class="time"><i class="far fa-clock"></i> 12:05</span>
+
+              <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+
+              <div class="timeline-body">
+                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                quora plaxo ideeli hulu weebly balihoo...
+              </div>
+              <div class="timeline-footer">
+                <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+              </div>
+            </div>
+          </div>
+          <!-- END timeline item -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-user bg-info"></i>
+
+            <div class="timeline-item">
+              <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
+
+              <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
+              </h3>
+            </div>
+          </div>
+          <!-- END timeline item -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-comments bg-warning"></i>
+
+            <div class="timeline-item">
+              <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
+
+              <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+
+              <div class="timeline-body">
+                Take me to your leader!
+                Switzerland is small and neutral!
+                We are more like Germany, ambitious and misunderstood!
+              </div>
+              <div class="timeline-footer">
+                <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
+              </div>
+            </div>
+          </div>
+          <!-- END timeline item -->
+          <!-- timeline time label -->
+          <div class="time-label">
+            <span class="bg-success">
+              3 Jan. 2014
+            </span>
+          </div>
+          <!-- /.timeline-label -->
+          <!-- timeline item -->
+          <div>
+            <i class="fas fa-camera bg-purple"></i>
+
+            <div class="timeline-item">
+              <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
+
+              <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
+
+              <div class="timeline-body">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+                <img src="https://placehold.it/150x100" alt="...">
+              </div>
+            </div>
+          </div>
+          <!-- END timeline item -->
+          <div>
+            <i class="far fa-clock bg-gray"></i>
+          </div>
+        </div>
+      </div>
+      <!-- /.tab-pane -->
+
+      <div class="tab-pane" id="settings">
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputName" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputName2" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <button type="" class="btn btn-danger">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+    <!-- /.tab-content -->
+  </div><!-- /.card-body -->
+</div>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<!-- <script src="plugins/sparklines/sparkline.js"></script> -->
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="dist/js/demo.js"></script> -->
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- <script src="dist/js/pages/dashboard.js"></script> -->
+
+<script>
+  $(function () {
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+<script>
+  var i = 1;
+  function additem() {
+      var itemlist = document.getElementById('itemlist');
+      
+//                membuat element
+      var row = document.createElement('tr');
+      var jenis = document.createElement('td');
+      var jumlah = document.createElement('td');
+      var aksi = document.createElement('td');
+
+//                meng append element
+      itemlist.appendChild(row);
+      row.appendChild(jenis);
+      row.appendChild(jumlah);
+      row.appendChild(aksi);
+
+//                membuat element input
+      var jenis_input = document.createElement('input');
+      jenis_input.setAttribute('name', 'jenis_input[' + i + ']');
+      jenis_input.setAttribute('class', 'form-control');
+
+      var jumlah_input = document.createElement('input');
+      jumlah_input.setAttribute('name', 'jumlah_input[' + i + ']');
+      jumlah_input.setAttribute('class', 'form-control');
+
+      var hapus = document.createElement('span');
+
+      jenis.appendChild(jenis_input);
+      jumlah.appendChild(jumlah_input);
+      aksi.appendChild(hapus);
+
+      hapus.innerHTML = '<button class="btn btn-small btn-danger"><i class="bi bi-x-lg"></i></button>';
+//                Aksi Delete
+      hapus.onclick = function () {
+          row.parentNode.removeChild(row);
+      };
+
+      i++;
+  }
+</script>
+</body>
+</html>
