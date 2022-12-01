@@ -455,7 +455,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table class="table text-bold table-md text-md">
+                        <!-- <table class="table text-bold table-md text-md">
                             <thead>
                                 <th class="text-center">Tanggal Assesmen Perawat/Bidan</th>
                                 <th class="text-center">Nama Perawat/Bidan</th>
@@ -465,13 +465,10 @@
                                 <tr class="text-center">
                                     <td>
                                         <input type="text" class="form-control" name="tanggalassemen" value="{{ $hasil[0]->tanggalassemen }}">
-                                        <!-- <textarea readonly disabled name="tanggal_assesmen" class="form-control" id="tanggal_assesmen" cols="30" rows="2"> </textarea> -->
                                     </td>
                                     <td>
                                         <input readonly type="text" class="form-control text-center" value="{{ strtoupper(auth()->user()->name) }}" name="namapemeriksa">
                                         <input hidden type="text" class="form-control" value="{{ strtoupper(auth()->user()->id) }}" name="idpemeriksa">
-                                        <!-- <textarea readonly disabled name="nama_perawat" class="form-control" id="nama_perawat" cols="30" rows="2"></textarea>
-                                    <textarea hidden name="id_perawat" id="id_perawat" cols="50" rows="10">{{ strtoupper(auth()->user()->id) }}</textarea> -->
                                     </td>
                                     <td>
                                         <div id="signature-pad">
@@ -491,7 +488,7 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> -->
                         <div class="col-md-12 justify-content-end mb-2">
                             <button type="button" class="btn btn-secondary float-right mr-2" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-success float-right mr-2 simpanhasil mb-3">Update</button>
@@ -536,15 +533,7 @@
     $(document).ready(function() {
         $('.simpanhasil').click(function() {
             spinner = $('#loader2');
-            spinner.show();
-            var canvas = document.getElementById("the_canvas");
-            var dataUrl = canvas.toDataURL();
-            if (dataUrl ==
-                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAABkCAYAAADOvVhlAAADOklEQVR4Xu3UwQkAAAgDMbv/0m5xr7hAIcjtHAECBAikAkvXjBEgQIDACa8nIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECAivHyBAgEAsILwxuDkCBAgIrx8gQIBALCC8Mbg5AgQICK8fIECAQCwgvDG4OQIECDweoABlt2MJjgAAAABJRU5ErkJggg=='
-            ) {
-                dataUrl = ''
-            }
-            document.getElementById("signature").value = dataUrl;
+            spinner.show();           
             var data = $('.formpemeriksaan').serializeArray();
             $.ajax({
                 async: true,
@@ -584,20 +573,6 @@
                 }
             });
         });
-        var wrapper = document.getElementById("signature-pad");
-        var clearButton = wrapper.querySelector("[data-action=clear]");
-        var canvas = wrapper.querySelector("canvas");
-        var el_note = document.getElementById("note");
-        var signaturePad;
-        signaturePad = new SignaturePad(canvas);
-        clearButton.addEventListener("click", function(event) {
-            document.getElementById("note").innerHTML = "The signature should be inside box";
-            signaturePad.clear();
-        });
-
-        function my_function() {
-            document.getElementById("note").innerHTML = "";
-        }
     });
     $(".btn-detail").click(function() {
         spinner = $('#loader2');

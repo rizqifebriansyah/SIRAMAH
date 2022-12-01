@@ -252,6 +252,7 @@
             },
             url: '<?= route('resumemedis') ?>',
             error: function(data) {
+                console.log(data)
                 spinner.hide();
                 Swal.fire({
                     icon: 'error',

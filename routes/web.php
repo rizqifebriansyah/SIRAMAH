@@ -31,6 +31,7 @@ Route::group(['middleware' => ['hak_akses:2','auth']], function () {
     Route::post('/formperawat', [ErmController::class, 'formperawat'])->name('formperawat');
     Route::get('/erm/{kodekunjungan}', [ErmController::class, 'indexErmPerawat'])->name('indexErmPerawat');
     Route::post('/simpanpemeriksaanperawat', [ErmController::class, 'simpanformperawat'])->name('simpanpemeriksaanperawat');   
+    Route::post('/simpansignature_perawat', [ErmController::class, 'simpansignature_perawat'])->name('simpansignature_perawat');
 });
 
 //dokter

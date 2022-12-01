@@ -177,20 +177,45 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-sm table-bordered table-striped">
-                    <thead class="bg-info text-center">
-                        <th>tgl assesmen</th>
-                        <th>Nama Perawat</th>
-                        <th>Tanda tangan perawat</th>
+                <table class="table text-bold table-md text-md">
+                    <thead>
+                        <th class="text-center">Tanggal Assesmen Perawat/Bidan</th>
+                        <th class="text-center">Nama Perawat/Bidan</th>
+                        <th>Tanda Tangan Perawat/Bidan</th>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>{{ $asskep[0]->tanggalassemen }}</td>
-                            <td>{{ $asskep[0]->namapemeriksa }}</td>
-                            <td><img src="{{$asskep[0]->signature}}" alt=""></td>
+                            <td>
+                                <input style="border:none" type="text" class="form-control" name="tanggalassemen" value="{{ $now }}">
+                            </td>
+                            <td>
+                                <input  style="border:none;background-color:white" readonly type="text" class="form-control text-center" value="{{ strtoupper(auth()->user()->name) }}" name="namapemeriksa">
+                                <input hidden type="text" class="form-control" value="{{ strtoupper(auth()->user()->id) }}" name="idpemeriksa">
+                            </td>
+                            <td>
+                                @if($asskep[0]->status == '2')
+                                <div id="signature-pad">
+                                    <div style="border:solid 1px teal; width:360px;height:110px;padding:3px;position:relative;">
+                                        <div id="note" onmouseover="my_function();">tulis tanda tangan didalam box ...
+                                        </div>
+                                        <canvas id="the_canvas" width="350px" height="100px"></canvas>
+                                    </div>
+                                    <div style="margin:10px;">
+                                        <input hidden type="" id="signature" name="signature">
+                                        <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span>
+                                            Clear</button>
+                                    </div>
+                                </div>
+                                @else
+                                <img src="{{ $asskep[0]->signature}}" alt="">
+                                @endif
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+                @if(auth()->user()->hak_akses == 2)
+                <button @if($asskep[0]->status != 2) disabled @endif class="btn btn-success float-right simpanassesmen">Simpan Assesmen</button>
+                @endif
                 @else
                 <h5 class="text-danger">Data tidak ditemukan...</h5>
                 @endif
@@ -323,34 +348,17 @@
                             <td>
                                 <input style="border:none" type="text" class="form-control" name="tanggalassemen" id="tanggalassemen" value="{{ $now }}">
                             </td>
+
                             <td>
                                 <input readonly style="border:none;background:white" type="text" class="form-control text-center" value="{{ strtoupper(auth()->user()->name) }}" name="namapemeriksa" id="namapemeriksa">
                                 <input hidden type="text" class="form-control" value="{{ strtoupper(auth()->user()->id) }}" id="idpemeriksa" name="idpemeriksa">
                             </td>
                             <td>
-                                @if($assmed[0]->status == '2')
-                                <div id="signature-pad">
-                                    <div style="border:solid 1px teal; width:360px;height:110px;padding:3px;position:relative;">
-                                        <div id="note" onmouseover="my_function();">tulis tanda tangan didalam box ...
-                                        </div>
-                                        <canvas id="the_canvas" width="350px" height="100px"></canvas>
-                                    </div>
-                                    <div style="margin:10px;">
-                                        <input hidden type="" id="signature" name="signature">
-                                        <button type="button" id="clear_btn" class="btn btn-danger" data-action="clear"><span class="glyphicon glyphicon-remove"></span>
-                                            Clear</button>
-                                    </div>
-                                </div>
-                                @else
                                 <img src="{{ $assmed[0]->signature}}" alt="">
-                                @endif
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                @if(auth()->user()->hak_akses == 3)
-                <button @if($assmed[0]->status != 2) disabled @endif class="btn btn-success float-right simpanassesmen">Simpan Assesmen</button>
-                @endif
                 @else
                 <h5 class="text-danger">Data tidak ditemukan...</h5>
                 @endif
@@ -389,7 +397,7 @@
                 signature,
 
             },
-            url: '<?= route('simpansignature') ?>',
+            url: '<?= route('simpansignature_perawat') ?>',
             error: function(data) {
                 spinner.hide()
                 console.log(data)
@@ -418,7 +426,6 @@
                         footer: ''
                     })
                     $('.notif').attr('Hidden', true)
-
                 }
             }
         });
