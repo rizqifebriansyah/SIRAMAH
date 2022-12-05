@@ -39,6 +39,7 @@ Route::group(['middleware' => ['hak_akses:3','auth']], function () {
     Route::get('/dokter', [ErmController::class, 'indexDokter'])->name('dokter');
     Route::post('/formdokter', [ErmController::class, 'formdokter'])->name('formdokter');
     Route::post('/riwayatpengobatan', [ErmController::class, 'riwayatpengobatan'])->name('riwayatpengobatan');
+    Route::post('/penandaangambar', [ErmController::class, 'penandaangambar'])->name('penandaangambar');
     Route::post('/terapitindakan', [ErmController::class, 'terapitindakan'])->name('terapitindakan');
     Route::post('/simpanlayanan', [ErmController::class, 'simpanlayanan'])->name('simpanlayanan');
     Route::post('/simpanorder', [ErmController::class, 'simpanorder'])->name('simpanorder');
@@ -55,4 +56,8 @@ Route::group(['middleware' => ['hak_akses:3','auth']], function () {
     Route::post('/pasienpulang', [ErmController::class, 'pasienpulang'])->name('pasienpulang');
     Route::post('/pasienranap', [ErmController::class, 'pasienranap'])->name('pasienranap');
     Route::post('/simpansignature', [ErmController::class, 'simpansignature'])->name('simpansignature');
+    Route::post('/ambilgambar', [ErmController::class, 'ambilgambar'])->name('ambilgambar');
+    Route::post('/simpangambar', [ErmController::class, 'simpangambar'])->name('simpangambar');
 });
+
+

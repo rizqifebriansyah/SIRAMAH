@@ -237,81 +237,87 @@
                         </tr>
                     </tbody>
                 </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Keadaan Umum</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $assmed[0]->keadaanumum }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Kesadaran</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $assmed[0]->kesadaran }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Diagnosa Kerja</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $assmed[0]->diagnosakerja }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Tindak Lanjut</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $assmed[0]->tindaklanjut }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Rencana Kerja</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $assmed[0]->rencanakerja }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th class="text-bold bg-info">Tindakan Medis</th>
-                    </thead>
-                    <tbody>
-                        @foreach($tindakan as $t)
-                        <tr>
-                            <td>{{ $t->NAMA_TARIF }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <th colspan="2" class="text-bold bg-info">Order Penunjang</th>
-                    </thead>
-                    <tbody>
-                        @foreach($orderpenunjang as $op)
-                        <tr>
-                            <td>{{ $op->NAMA_TARIF }}</td>
-                            <td>{{ $op->nama_unit_tujuan }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Keadaan Umum</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $assmed[0]->keadaanumum }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Kesadaran</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $assmed[0]->kesadaran }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Rencana Kerja</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $assmed[0]->rencanakerja }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Tindakan Medis</th>
+                            </thead>
+                            <tbody>
+                                @foreach($tindakan as $t)
+                                <tr>
+                                    <td>{{ $t->NAMA_TARIF }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Diagnosa Kerja</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $assmed[0]->diagnosakerja }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th class="text-bold bg-secondary">Tindak Lanjut</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $assmed[0]->tindaklanjut }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <th colspan="2" class="text-bold bg-secondary">Order Penunjang</th>
+                            </thead>
+                            <tbody>
+                                @foreach($orderpenunjang as $op)
+                                <tr>
+                                    <td>{{ $op->NAMA_TARIF }}</td>
+                                    <td>{{ $op->nama_unit_tujuan }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <table class="table text-bold table-md text-md mt-4">
                     <thead class="bg-info">
                         <th class="text-center">Tanggal Assesmen Dokter</th>

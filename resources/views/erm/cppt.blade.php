@@ -143,33 +143,34 @@
                                 <td class="text-bold">Riwayat Penyakit</td>
                                 <td colspan="4" style="font-style:italic" class="text-md">{{ $c->riwayat_penyakit }}</td>
                             </tr>
-                            <tr>
+                            <tr class="bg-info">
                                 <td class="text-bold">Hipertensi</td>
                                 <td class="text-bold">Kencing Manis</td>
                                 <td class="text-bold">Jantung</td>
                                 <td class="text-bold">Stroke</td>
                             </tr>
-                            <tr class="bg-info">
-                                <td style="font-style:italic" class="text-md">{{ $c->hipertensi }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->kencingmanis }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->jantung }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->stroke }}</td>
-                            </tr>
                             <tr>
+                                <td style="font-style:italic" class="text-md">@if($c->hipertensi != 1)Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if($c->kencingmanis != 1)Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if($c->jantung != 1) Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if ($c->stroke != 1) Tidak Ada @else Ya @endif</td>
+                            </tr>
+                            <tr class="bg-info">
                                 <td class="text-bold">Hepatitis</td>
                                 <td class="text-bold">Asthma</td>
                                 <td class="text-bold">TB Paru</td>
                                 <td class="text-bold">Ginjal</td>
                             </tr>
-                            <tr class="bg-info">
-                                <td style="font-style:italic" class="text-md">{{ $c->hepatitis }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->asthma }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->tbparu }}</td>
-                                <td style="font-style:italic" class="text-md">{{ $c->ginjal }}</td>
+                            <tr>
+                                <td style="font-style:italic" class="text-md">@if($c->hepatitis != 1)Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if($c->asthma != 1 ) Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if($c->tbparu != 1 ) Tidak Ada @else Ya @endif</td>
+                                <td style="font-style:italic" class="text-md">@if($c->ginjal != 1 )
+                                Tidak Ada @else Ya @endif</td>
                             </tr>
                             <tr>
                                 <td class="text-bold">Riwayat Penyakit Lain</td>
-                                <td colspan="4" style="font-style:italic" class="text-md">{{ $c->riwayatlain }}</td>
+                                <td colspan="4" style="font-style:italic" class="text-md">@if($c->riwayatlain != 1)Tidak ada @else Lainnya @endif</td>
                             </tr>
                             <tr>
                                 <td class="text-bold">Keadaan Umum</td>

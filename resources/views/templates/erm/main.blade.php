@@ -92,6 +92,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a id="penandaangambar" class="nav-link penandaangambar">
+                            <i class="nav-icon fas bi bi-images"></i>
+                            <p>Penandaan Gambar</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a id="tindakan" class="nav-link tindakan">
                             <i class="nav-icon fas bi bi-activity"></i>
                             <p>Terapi / Tindakan Medis </p>

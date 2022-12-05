@@ -569,6 +569,7 @@
                             text: data.message,
                             footer: ''
                         })
+                        cek_resume()
                     }
                 }
             });

@@ -31,6 +31,8 @@
 <script src="{{ asset('public/semeru/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('public/semeru/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('public/semeru/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://unpkg.com/markerjs2/markerjs2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script>
@@ -139,6 +141,34 @@
                 kodekunjungan: $('#kodekunjungan').val()
             },
             url: '<?= route('riwayatpengobatan') ?>',
+            error: function(data) {
+                spinner.hide();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Sepertinya ada masalah ...',
+                    footer: ''
+                })
+            },
+            success: function(response) {
+                spinner.hide();
+                $('#content').html(response)
+            }
+        });
+    });
+    $(".penandaangambar").click(function() {
+        spinner = $('#loader2');
+        spinner.show();
+        var element = document.getElementById("penandaangambar");
+        myFunction(element)
+        element.classList.add("active");
+        $.ajax({
+            type: 'post',
+            data: {
+                _token: "{{ csrf_token() }}",
+                kodekunjungan: $('#kodekunjungan').val()
+            },
+            url: '<?= route('penandaangambar') ?>',
             error: function(data) {
                 spinner.hide();
                 Swal.fire({
@@ -335,6 +365,7 @@
     }
 
     onload = cek_resume()
+
     function cek_resume() {
         $.ajax({
             async: true,
@@ -360,6 +391,32 @@
         });
     }
 </script>
+<script>
+    function showMarkerArea(target) {
+      const markerArea = new markerjs2.MarkerArea(target);
+      markerArea.addEventListener("render", (event) => (target.src = event.dataUrl));
+
+      markerArea.uiStyleSettings.toolbarStyleColorsClassName = 'bg-gray-50';
+      markerArea.uiStyleSettings.toolbarButtonStyleColorsClassName =
+        'bg-gradient-to-t from-gray-50 to-gray-50 hover:from-gray-50 hover:to-pink-50 fill-current text-pink-300';
+      markerArea.uiStyleSettings.toolbarActiveButtonStyleColorsClassName =
+        'bg-gradient-to-t from-pink-100 via-gray-50 to-gray-50 fill-current text-pink-400';
+      markerArea.uiStyleSettings.toolbarOverflowBlockStyleColorsClassName = "bg-gray-50";
+      
+      markerArea.uiStyleSettings.toolboxColor = '#F472B6',
+      markerArea.uiStyleSettings.toolboxAccentColor = '#BE185D',
+      markerArea.uiStyleSettings.toolboxStyleColorsClassName = 'bg-gray-50';
+      markerArea.uiStyleSettings.toolboxButtonRowStyleColorsClassName = 'bg-gray-50';
+      markerArea.uiStyleSettings.toolboxPanelRowStyleColorsClassName =
+        'bg-pink-100 bg-opacity-90 fill-current text-pink-400';
+      markerArea.uiStyleSettings.toolboxButtonStyleColorsClassName =
+        'bg-gradient-to-t from-gray-50 to-gray-50 hover:from-gray-50 hover:to-pink-50 fill-current text-pink-300';
+      markerArea.uiStyleSettings.toolboxActiveButtonStyleColorsClassName =
+        'bg-gradient-to-b from-pink-100 to-gray-50 fill-current text-pink-400';
+
+      markerArea.show();
+    }
+  </script>
 </body>
 
 </html>

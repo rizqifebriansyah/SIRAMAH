@@ -12,6 +12,7 @@ use App\Models\ts_layanan_detail;
 use App\Models\mt_kode_header;
 use App\Models\erm_order_header;
 use App\Models\erm_order_detail;
+use App\Models\gambartht;
 use App\Models\assemenawalmedis;
 
 class ErmController extends Controller
@@ -458,6 +459,13 @@ class ErmController extends Controller
     public function riwayatpengobatan(Request $request)
     {
         echo 'ok';
+    }
+    public function penandaangambar(Request $request)
+
+    {
+        return view('erm.gambar', [
+            'kodekunjungan' => $request->kodekunjungan,
+        ]);
     }
     public function terapitindakan(Request $request)
     {
@@ -944,6 +952,99 @@ class ErmController extends Controller
         echo json_encode($data);
         die;
     }
+    public function simpangambar(Request $request)
+    {
+        $kodekunjungan = $request->kodekunjungan;
+        $img = $request->img;
+        $id = $request->id;
+
+        //jika poli tht
+        $cek_gbr = DB::select('select id from erm_tanda_gambar_tht where kodekunjungan = ?', [$kodekunjungan]);
+        if (count($cek_gbr) == 0) {
+            if ($id == 'telingakanan') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'telingakanan' => $img,
+                ];
+            }
+            if ($id == 'telingakiri') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'telingakiri' => $img,
+                ];
+            }
+            if ($id == 'laring') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'laring' => $img,
+                ];
+            }
+            if ($id == 'faring') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'faring' => $img,
+                ];
+            }
+            if ($id == 'leher') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'leherkepala' => $img,
+                ];
+            }
+            if ($id == 'maksilofasial') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'maksilofasial' => $img,
+                ];
+            }
+            $gambartht = gambartht::create($data);
+        } else {
+            if ($id == 'telingakanan') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'telingakanan' => $img,
+                ];
+            }
+            if ($id == 'telingakiri') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'telingakiri' => $img,
+                ];
+            }
+            if ($id == 'laring') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'laring' => $img,
+                ];
+            }
+            if ($id == 'faring') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'faring' => $img,
+                ];
+            }
+            if ($id == 'leher') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'leherkepala' => $img,
+                ];
+            }
+            if ($id == 'maksilofasial') {
+                $data = [
+                    'kodekunjungan' => $kodekunjungan,
+                    'maksilofasial' => $img,
+                ];
+            }
+
+            gambartht::whereRaw('kodekunjungan = ?', array($kodekunjungan))->update($data);
+        }
+        $data = [
+            'kode' => 200,
+            'message' => 'Assemen awal medis sudah disimpan !'
+        ];
+        echo json_encode($data);
+        die;
+    }
     public function simpansignature_perawat(Request $request)
     {
         $kodekunjungan = $request->kodekunjungan;
@@ -986,5 +1087,31 @@ class ErmController extends Controller
         }
         echo json_encode($data);
         die;
+    }
+    public function ambilgambar(Request $request)
+    {
+        $id = $request->id;
+        $kodekunjungan = $request->kodekunjungan;
+        if ($id == 'lar') {
+            return view('erm.gambar_laring', []);
+        } else if ($id == 'tkan') {
+            $gbr = DB::select('select telingakanan from erm_tanda_gambar_tht where kodekunjungan = ? ',[$kodekunjungan]);
+            return view('erm.gambar_telingakanan', [
+                'gbr' => $gbr[0]->telingakanan,
+                'count' => count($gbr)
+            ]);
+        } else if ($id == 'tkir') {
+            $gbr = DB::select('select telingakiri from erm_tanda_gambar_tht where kodekunjungan = ? ',[$kodekunjungan]);
+            return view('erm.gambar_telingakiri', [
+                'gbr' => $gbr[0]->telingakiri,
+                'count' => count($gbr)
+            ]);
+        } else if ($id == 'far') {
+            return view('erm.gambar_faring', []);
+        } else if ($id == 'maks') {
+            return view('erm.gambar_maks', []);
+        } else if ($id == 'leh') {
+            return view('erm.gambar_leh', []);
+        }
     }
 }
