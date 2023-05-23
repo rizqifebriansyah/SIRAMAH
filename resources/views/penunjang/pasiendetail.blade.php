@@ -1,6 +1,9 @@
-<div class="row" style="margin-left: 30px;">
-    <a rel="noopener" href="{{ route('laboratorium')}}" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Home</a>
+<div class=" col-md-11" style="margin-bottom:10px ;">
+
+  <a style="margin-left: 20px;" rel="noopener" href="{{ route('laboratorium')}}" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Home
+  </a>
 </div>
+
 <div style="margin-top: 20px;"></div>
 <div class="invoice col-11 " id="printableArea" style="margin-left: 30px;">
   <!-- title row -->
@@ -21,7 +24,7 @@
     <div class="col-sm-4 invoice-col">
       From
       <address>
-        <strong>Admin laboratorium</strong><br>
+        <strong>Admin</strong><br>
         Jl. Prabu Kiansantang No.4,
         Waled Kota, Waled, Cirebon,<br>
         Jawa Barat 45187. IGD 24 Jam.<br>
@@ -84,7 +87,7 @@
             <td>{{ $order->diskon_dokter}}%</td>
             <td>{{ $order->cyto}}</td>
             <td>Rp. {{ number_format($order->total_layanan)}}</td>
-            
+
           </tr>
           @php
           $subtotal = $order->total_layanan + $subtotal;
@@ -167,17 +170,19 @@
 
 <script>
   function berhasil() {
-      var bel = new Audio('berhasil.mp3');
-      bel.play();
-    }
-    function retur() {
-      var bel = new Audio('retur.mp3');
-      bel.play();
-    }
-    function batal() {
-      var bel = new Audio('batal.mp3');
-      bel.play();
-    }
+    var bel = new Audio('berhasil.mp3');
+    bel.play();
+  }
+
+  function retur() {
+    var bel = new Audio('retur.mp3');
+    bel.play();
+  }
+
+  function batal() {
+    var bel = new Audio('batal.mp3');
+    bel.play();
+  }
   $(function() {
     $("#tabelordertdy").DataTable({
       "responsive": false,
@@ -312,6 +317,6 @@
   function pdf() {
     id = $(this).attr('id')
     kodeheader = $('#kodeheader').val()
-    window.open('cetakorder/' + id + '/' + kodeheader);
+    window.open('cetakorder/' + kodeheader + '/' + id);
   }
 </script>

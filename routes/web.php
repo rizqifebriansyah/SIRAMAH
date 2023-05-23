@@ -77,7 +77,7 @@ Route::group(['middleware' => ['hak_akses:4', 'auth']], function () {
     Route::post('/batalorder', [LaboratoriumController::class, 'batalorder'])->name('batalorder');
     Route::post('/returorder', [LaboratoriumController::class, 'returorder'])->name('returorder');
     Route::post('simpanorder', [LaboratoriumController::class, 'simpanorderdetail'])->name('simpanorder');
-    Route::get('cetakorder/{id}/{kode_header}', [LaboratoriumController::class, 'cetakpdf']);
+    Route::get('cetakorder/{kode_header}/{idhed}', [LaboratoriumController::class, 'cetakpdf']);
     Route::post('tampilpaket', [LaboratoriumController::class, 'tampilpaket'])->name('tampilpaket');
     Route::post('/simpanorderpaket', [LaboratoriumController::class, 'simpanorderpaket'])->name('simpanorderpaket');
     Route::post('/simpanorderpoli', [LaboratoriumController::class, 'simpanorderpoli'])->name('simpanorderpoli');
@@ -88,6 +88,7 @@ Route::group(['middleware' => ['hak_akses:4', 'auth']], function () {
     Route::post('/hitungorder', [LaboratoriumController::class, 'hitungorder'])->name('hitungorder');
     Route::post('/hitungorderpoli', [LaboratoriumController::class, 'hitungorderpoli'])->name('hitungorderpoli');
     Route::post('/riwayatpasien', [LaboratoriumController::class, 'riwayatpasien'])->name('riwayatpasien');
+    Route::post('/returorderrad', [LaboratoriumController::class, 'returorderrad'])->name('returorderrad');
 
     
 

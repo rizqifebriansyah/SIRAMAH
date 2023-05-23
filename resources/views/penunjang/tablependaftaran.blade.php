@@ -20,8 +20,8 @@
             <td>{{ $pk->jenis_kelamin }}</td>
             <td>{{ $pk->alamat }}</td>
             <td>
-                @if ($pk->nama_penjamin == 'PRIBADI' )
-                <p class="badge badge-primary">JKN Perusahaan</p>
+                @if ($pk->kode_penjamin == 'P01' )
+                <p class="badge badge-primary">PRIBADI</p>
                 @else
                 <p class="badge badge-success">{{ $pk->nama_penjamin }}</p>
                 @endif
@@ -30,6 +30,7 @@
                 {{ $pk->DIAGX }}
 
             </td>
+            <!-- <td>{{ $pk->counter}}</td> -->
             
 
 
@@ -42,13 +43,12 @@
 </table>
 
 <script>
-    $(document).ready(function() {
-        window.setTimeout(function() {
-            datapasien()
-            bunyi()
-        }, 600000);
+    // $(document).ready(function() {
+    //     window.setTimeout(function() {
+    //         datapasien()
+    //     }, 600000);
 
-    });
+    // });
 
     function bunyi() {
         var bel = new Audio('notif.mp3');
