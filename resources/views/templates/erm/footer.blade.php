@@ -10,6 +10,8 @@
 <script src="{{ asset('public/semeru/dist/js/adminlte.js') }}"></script>
 
 <!-- PAGE PLUGINS -->
+<!-- datengrange -->
+<script src="{{ asset('public/semeru/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- jQuery Mapael -->
 <script src="{{ asset('public/semeru/plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
 <script src="{{ asset('public/semeru/plugins/raphael/raphael.min.js') }}"></script>

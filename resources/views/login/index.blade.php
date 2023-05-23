@@ -63,10 +63,11 @@
     <!-- Image and text -->
     <nav class="navbar" style="background-color:rgb(33, 65, 45)">
         <div class="container">
-            <a class="navbar-brand text-light">
-                <img src="{{ asset('public/img/semeru.png') }}" width="360" height="60"
-                    class="d-inline-block align-top ml-2 mr-2" alt="">
+        <a class="navbar-brand text-light">
+                <img src="{{ asset('public/img/semerus.png') }}" width="70" height="70" class="d-inline-block align-top ml-2 mr-2" alt="">
             </a>
+            <a class="navbar-brand text-light"><h1 style="font-size:50px;">SIRAMAH</h1></a>
+          
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 <ul class="nav justify-content-end">

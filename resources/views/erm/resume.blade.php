@@ -46,7 +46,7 @@
                     </tr>
                 </table>
                 <table class="table table-bordered table-sm table-striped">
-                    <thead class="bg-info">
+                    <thead class="bg-warning">
                         <th>Tekanan Darah</th>
                         <th>Frekuensi Nadi</th>
                         <th>Frekuensi Nafas</th>
@@ -139,7 +139,7 @@
                 </div>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Diagnosa Keperawatan</th>
+                        <th class="bg-warning">Diagnosa Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -149,7 +149,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Rencana Keperawatan</th>
+                        <th class="bg-warning">Rencana Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -159,7 +159,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Tindakan Keperawatan</th>
+                        <th class="bg-warning">Tindakan Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -169,7 +169,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Evaluasi Keperawatan</th>
+                        <th class="bg-warning">Evaluasi Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>

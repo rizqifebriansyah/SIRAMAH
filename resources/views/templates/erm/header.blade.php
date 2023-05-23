@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('public/semeru/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/semeru/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/semeru/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <!-- datepicker -->
+    <link rel="stylesheet" href="{{ asset('public/semeru/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('public/semeru/dist/css/adminlte.min.css') }}">
@@ -65,7 +67,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
-<div class="preloader2" id="loader2">
+    <div class="preloader2" id="loader2">
         <div class="loading">
             <img src="{{ asset("public/img/fb.gif") }}" width="80">
             <p>Harap Tunggu</p>

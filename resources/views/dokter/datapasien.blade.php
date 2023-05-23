@@ -12,7 +12,8 @@
     </thead>
     <tbody>
         @foreach ($pasien as $p)
-        <tr onclick="location.href='erm/dokter/{{$p->kode_kunjungan}}'" class="pilihpasien toastsDefaultSuccess" nomor-rm="{{ $p->no_rm }}" nama="{{ $p->nama }}" kodekunjungan="{{ $p->kode_kunjungan }}" alamat="{{ $p->alamat }}" counter="{{ $p->counter }}" umur="{{ $p->umur }}" unit="{{ $p->unit }}" tglmasuk="{{ $p->tgl_masuk }}">
+        <tr onclick="location.href='erm/dokter/{{$p->kode_kunjungan}}'" class="pilihpasien toastsDefaultSuccess" nomor-rm="{{ $p->no_rm }}" nama="{{ $p->nama }}"
+         kodekunjungan="{{ $p->kode_kunjungan }}" alamat="{{ $p->alamat }}" counter="{{ $p->counter }}" umur="{{ $p->umur }}" unit="{{ $p->unit }}" tglmasuk="{{ $p->tgl_masuk }}">
             <td hidden>{{ $p->kode_kunjungan }}</td>
             <td> 
             @if($p->kj == NULL)    

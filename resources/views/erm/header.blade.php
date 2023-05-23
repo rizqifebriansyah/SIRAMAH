@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('public/semeru/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/semeru/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- datepicker -->
+    <link rel="stylesheet" href="{{ asset('public/semeru/plugins/daterangepicker/daterangepicker.css') }}">
+
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css">
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -66,18 +69,20 @@
         /* .tab_content {display:none;} */
     </style>
 </head>
+
 <body id="content2" class="hold-transition sidebar-mini">
     <div class="preloader2" id="loader2">
         <div class="loading">
-            <img src="{{ asset("public/img/fb.gif") }}" width="80">
+            <img src="{{ asset("public/img/lab.gif") }}" width="80">
             <p>Harap Tunggu</p>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:rgb(33, 65, 45);  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div class="container">
             <a class="navbar-brand text-light">
-                <img src="{{ asset('public/img/semeru.png') }}" width="360" height="60" class="d-inline-block align-top ml-2 mr-2" alt="">
+                <img src="{{ asset('public/img/semerus.png') }}" width="70" height="70" class="d-inline-block align-top ml-2 mr-2" alt="">
             </a>
+            <a class="navbar-brand text-light"><h1 style="font-size:50px;">SIRAMAH</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,11 +93,14 @@
                     </li> @endif --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                            {{ strtoupper(auth()->user()->name) }}
+                        {{ strtoupper(auth()->user()->name) }}
+
                         </a>
+
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Info</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+
+                            <a class="dropdown-item" onClick="window.location.reload()"> <i class="fas fa-sync-alt fa-spin"></i> Load Pasien </a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                         </div>
                     </li>
 
@@ -126,6 +134,8 @@
     <script src="{{ asset('public/semeru/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('public/semeru/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- daterangepicker -->
+    <script src="{{ asset('public/semeru/plugins/daterangepicker/daterangepicker.js') }}"></script>
 </body>
 
 </html>

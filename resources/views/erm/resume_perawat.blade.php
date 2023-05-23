@@ -3,7 +3,7 @@
         <!-- Widget: user widget style 2 -->
         <div class="card card-widget widget-user-2">
             <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-info">
+            <div class="widget-user-header bg-warning">
                 <div class="widget-user-image">
                     <img class="img-circle elevation-2" src="{{ asset('public/img/user.jpg') }}" alt="User Avatar">
                 </div>
@@ -46,7 +46,7 @@
                     </tr>
                 </table>
                 <table class="table table-bordered table-sm table-striped">
-                    <thead class="bg-info">
+                    <thead class="bg-warning">
                         <th>Tekanan Darah</th>
                         <th>Frekuensi Nadi</th>
                         <th>Frekuensi Nafas</th>
@@ -139,7 +139,7 @@
                 </div>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Diagnosa Keperawatan</th>
+                        <th class="bg-warning">Diagnosa Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -149,7 +149,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Rencana Keperawatan</th>
+                        <th class="bg-warning">Rencana Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -159,7 +159,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Tindakan Keperawatan</th>
+                        <th class="bg-warning">Tindakan Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -169,7 +169,7 @@
                 </table>
                 <table class="table table-sm table-bordered table-striped">
                     <thead>
-                        <th class="bg-info">Evaluasi Keperawatan</th>
+                        <th class="bg-warning">Evaluasi Keperawatan</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -233,7 +233,7 @@
                     </tr>
                 </table>
                 <table class="table table-sm table-bordered">
-                    <thead class="bg-info">
+                    <thead class="bg-warning">
                         <th>Hipertensi</th>
                         <th>Kencing Manis</th>
                         <th>Jantung</th>
@@ -255,7 +255,7 @@
                             <td>@if($assmed[0]->tbparu == 1 ) Ya @else Tidak @endif</td>
                         </tr>
                         <tr>
-                            <td colspan="8" class="text-bold bg-info">Riwaat Penyakit Lain</td>
+                            <td colspan="8" class="text-bold bg-warning">Riwaat Penyakit Lain</td>
                         </tr>
                         <tr>
                             <td colspan="8">{{ $assmed[0]->riwayatlain }}</td>
@@ -264,7 +264,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Keadaan Umum</th>
+                        <th class="text-bold bg-warning">Keadaan Umum</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -274,7 +274,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Kesadaran</th>
+                        <th class="text-bold bg-warning">Kesadaran</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -284,7 +284,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Diagnosa Kerja</th>
+                        <th class="text-bold bg-warning">Diagnosa Kerja</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -294,7 +294,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Tindak Lanjut</th>
+                        <th class="text-bold bg-warning">Tindak Lanjut</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -304,7 +304,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Rencana Kerja</th>
+                        <th class="text-bold bg-warning">Rencana Kerja</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -314,7 +314,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th class="text-bold bg-info">Tindakan Medis</th>
+                        <th class="text-bold bg-warning">Tindakan Medis</th>
                     </thead>
                     <tbody>
                         @foreach($tindakan as $t)
@@ -326,7 +326,7 @@
                 </table>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <th colspan="2" class="text-bold bg-info">Order Penunjang</th>
+                        <th colspan="2" class="text-bold bg-warning">Order Penunjang</th>
                     </thead>
                     <tbody>
                         @foreach($orderpenunjang as $op)
@@ -338,7 +338,7 @@
                     </tbody>
                 </table>
                 <table class="table text-bold table-md text-md mt-4">
-                    <thead class="bg-info">
+                    <thead class="bg-warning">
                         <th class="text-center">Tanggal Assesmen Dokter</th>
                         <th class="text-center">Nama Dokter</th>
                         <th>Tanda Tangan Dokter</th>

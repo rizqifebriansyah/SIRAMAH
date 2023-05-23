@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" language="groovy" pageWidth="271" pageHeight="371" columnWidth="271" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c94382bb-75df-4152-a666-88649c43b9cb">
+	<property name="ireport.zoom" value="3.4522712143931042"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="17"/>
+	<subDataset name="dataset1" uuid="1d15f842-40d7-4197-8681-475214b8d757"/>
+	<queryString language="SQL">
+		<![CDATA[[CDATA[{CALL SP_NOTA_TINDAKAN_NEW('LAB230314000001','4592212') }]]]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<image>
+				<reportElement x="4" y="0" width="39" height="43" uuid="537dd00a-d312-45da-8c0b-56313ef47914"/>
+				<imageExpression><![CDATA["C:\\xampp\\htdocs\\semerusmart\\public\\img\\logo_rs.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="47" y="3" width="171" height="16" uuid="57fecf66-2d65-461a-9148-3190568b047c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RINCIAN TINDAKAN PELAYANAN RSUD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="19" width="119" height="13" uuid="31482e65-9499-4739-8bc9-cedec7adb9ae"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT LABORATORIUM]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="41" width="267" height="1" uuid="68c635f2-f024-48b8-a89c-15506b067925"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="3" width="67" height="9" uuid="e813f292-dfae-4f3f-bff7-973d4cb5e351"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Kode Layanan  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="12" width="67" height="9" uuid="5ad6af9f-e7fb-40eb-a2ad-0def1600061b"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[No.RM ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="21" width="67" height="9" uuid="e2e18999-0842-44c0-865f-5aa39b459690"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="30" width="67" height="10" uuid="dea5117c-a5d3-4742-b670-db63d4523d2c"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Tanggal Lahir/JK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="40" width="67" height="9" uuid="df17cc7b-cee9-4c41-ad88-e0153dcf75d2"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[umur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="49" width="67" height="25" uuid="cad251e1-cec4-4aea-8f1b-bc4adfe006c2"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="74" width="67" height="10" uuid="9fc5aac8-d3bb-48c2-b404-a251ebf6e632"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Unit Asal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="84" width="67" height="10" uuid="e5b0ce33-8beb-45fb-8708-8c25b9c69cfe"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Penjamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="3" width="11" height="9" uuid="94bb1d0f-afce-49bd-943a-60db0cd8b001"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="12" width="11" height="9" uuid="90e79436-ca63-488a-93f6-b495d219fe68"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="21" width="11" height="9" uuid="5133f161-48df-4c63-987b-cea089bc64b8"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="30" width="11" height="10" uuid="7c8281b0-d12c-4ec3-b83c-b136d747be60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="40" width="11" height="9" uuid="9a06f5c4-a5dd-4942-89be-920adef59a4d"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="49" width="11" height="25" uuid="67590222-9e6e-43a3-a387-5faba33b3ff6"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="74" width="11" height="10" uuid="99d29eff-74d1-456c-b000-da1ae1baadd4"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="84" width="11" height="10" uuid="c16eee0f-c37f-45de-b6e6-e272674bd30d"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="39" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="28"/>
+	</summary>
+</jasperReport>

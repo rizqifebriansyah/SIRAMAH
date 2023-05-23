@@ -14,7 +14,7 @@ class LoginController extends BaseController
     {
         return view('login.index',[
             'menu' => 1,
-            'title' => 'Semerusmart Login'
+            'title' => 'SIRAMAH Login'
         ]);
     }
     public function authenticate(Request $request)
@@ -26,12 +26,14 @@ class LoginController extends BaseController
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate(); 
             $hak = auth()->user()->hak_akses;
-            if($hak == 2){
-                return redirect()->intended('perawat');
+            if($hak == 4){
+                return redirect()->intended('laboratorium');
             }
-            if($hak == 3){
-                return redirect()->intended('dokter');
+            elseif($hak == 5){
+                return redirect()->intended('telekonsultasi');
             }
+          
+            
         } 
         return back()->with('loginError', 'Login gagal !');
     }

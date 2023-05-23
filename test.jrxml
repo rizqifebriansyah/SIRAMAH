@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="311" pageHeight="411" columnWidth="271" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c94382bb-75df-4152-a666-88649c43b9cb">
+	<property name="ireport.zoom" value="2.357947691000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="1d15f842-40d7-4197-8681-475214b8d757"/>
+	<queryString language="SQL">
+		<![CDATA[{CALL SP_NOTA_TINDAKAN_NEW('LAB230314000001','4592212') }]]>
+	</queryString>
+	<field name="kode_layanan_header" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_entry" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UNIT" class="java.lang.Integer"/>
+	<field name="total_layanan_header" class="java.lang.Double"/>
+	<field name="status_layanan" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_rm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_kunjungan" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_penjamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_px" class="java.lang.String"/>
+	<field name="alamat" class="java.lang.String"/>
+	<field name="id_layanan_detail" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_layanan" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_tarif" class="java.lang.Double"/>
+	<field name="total_layanan" class="java.lang.Double"/>
+	<field name="diskon_layanan" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grantotal_layanan" class="java.lang.Double"/>
+	<field name="nama_penjamin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_tarif_detail" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAMA_TARIF" class="java.lang.String"/>
+	<field name="counter" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="username" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_tipe_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_unit" class="java.lang.String"/>
+	<field name="umur" class="java.lang.String"/>
+	<field name="tgl_lahir" class="java.lang.String"/>
+	<field name="UNIT_CETAK" class="java.lang.String"/>
+	<field name="JK" class="java.lang.String"/>
+	<field name="no_urut_px_ris" class="java.lang.Double"/>
+	<field name="tgl_lahir_ris" class="java.sql.Date"/>
+	<field name="kota_ris" class="java.lang.String"/>
+	<field name="jk_ris" class="java.lang.String"/>
+	<variable name="UNIT_CETAK_1" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{UNIT_CETAK}]]></variableExpression>
+	</variable>
+	<variable name="UNIT_CETAK_2" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{UNIT_CETAK}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="96" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="0" width="0" height="10" uuid="415e9ce8-62ac-48d0-9342-b2482c79bcc6"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="39" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="28"/>
+	</summary>
+</jasperReport>

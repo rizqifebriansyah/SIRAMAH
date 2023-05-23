@@ -14,6 +14,7 @@ use App\Models\erm_order_header;
 use App\Models\erm_order_detail;
 use App\Models\gambartht;
 use App\Models\assemenawalmedis;
+use Illuminate\Support\Facades\Http;
 
 class ErmController extends Controller
 {
@@ -29,6 +30,7 @@ class ErmController extends Controller
             'title' => 'Semerusmart | E-RM',
         ]);
     }
+
     public function ambildatapasien()
     {
         $tipe = auth()->user()->hak_akses;

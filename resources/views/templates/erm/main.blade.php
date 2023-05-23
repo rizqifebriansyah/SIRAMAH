@@ -33,11 +33,17 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        @if(auth()->user()->hak_akses == 2)
+        <a href="{{ route('perawat') }}" class="brand-link">
             <img src="{{ asset('public/semeru/dist/img/logo_rs.png') }}" alt="AdminLTE Logo" class="brand-image  elevation-3" style="opacity: .9">
             <span style="font-family:calibri" class="brand-text font-weight-light">SEMERUSMART</span>
         </a>
-
+        @else
+        <a href="{{ route('dokter') }}" class="brand-link">
+            <img src="{{ asset('public/semeru/dist/img/logo_rs.png') }}" alt="AdminLTE Logo" class="brand-image  elevation-3" style="opacity: .9">
+            <span style="font-family:calibri" class="brand-text font-weight-light">SEMERUSMART</span>
+        </a>
+        @endif
         <!-- Sidebar -->
         <div class="sidebar sidebar-dark-teal">
             <!-- Sidebar user panel (optional) -->
@@ -60,7 +66,15 @@
                 <ul class="nav nav-pills nav-sidebar flex-column nav-compact" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
+               @if(auth()->user()->hak_akses == 2)
+               <li class="nav-item">
+                        <a  href="{{ route('perawat') }}" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a id="infopasien" href="" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
@@ -70,7 +84,6 @@
                         </a>
                     </li>
                     <li class="nav-header">ANAMNESIS</li>
-                    @if(auth()->user()->hak_akses == 2)
                     <li class="nav-item">
                         <a id="pemeriksaan" class="nav-link pemeriksaan">
                             <i class="nav-icon fas bi bi-clipboard-check"></i>
@@ -78,6 +91,29 @@
                         </a>
                     </li>
                     @else
+                    <li class="nav-item">
+                        <a  href="{{ route('dokter') }}" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="infopasien" href="" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Info Pasien
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">ANAMNESIS</li>
+                    <li class="nav-item">
+                        <a id="pemeriksaan" class="nav-link pemeriksaan">
+                            <i class="nav-icon fas bi bi-clipboard-check"></i>
+                            <p>Hasil Pemeriksaan</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a id="pemeriksaanmedis" class="nav-link pemeriksaanmedis">
                             <!-- <i class="nav-icon fas fa-ellipsis-h"></i> -->
